@@ -3,6 +3,13 @@
   --primary-color: #184D47;
 }
 
+*{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
 body {
   margin: 0;
   font-family: Roboto;
