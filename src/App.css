@@ -1,0 +1,28 @@
+h1 {
+    font-family: Montserrat;
+    font-size: 4rem;
+    letter-spacing: -0.4rem;
+    font-weight: normal;
+    color: --primary-color;
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    
+}
+label {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: #065446;
+}
+input {
+    height: 5rem;
+    border-radius: 3rem;
+    width: 100%;
+    background-color: #FFFFDD;
+    border: 2px solid #006A71;
+}
