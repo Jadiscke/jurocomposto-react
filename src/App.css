@@ -23,11 +23,19 @@ h1 {
 }
 
 .result {
-
+    position: relative;
     height: 6rem;
     border: 2px solid #006A71;
     background: #FFFFDD;
     border-radius: 3rem;
     box-shadow: 0 1rem 1rem -1rem;
     
+}
+
+.result span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
 }
