@@ -1,21 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
+import Input from './components/Input';
 import './App.css';
 const App = () => {
     const [initialValue,setInitialValue] = useState<number | null>(null);
+    const handleInitialValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        setInitialValue(Number(event.target.value))
+    }
+    const [monthValue,setMonthValue] = useState<number | null>(null);
+    const handleMonthValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        setMonthValue(Number(event.target.value))
+    }
+    const [monthAddValue,setAddMonthValue] = useState<number | null>(null);
+    const handleAddMonthValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        setAddMonthValue(Number(event.target.value))
+    }
+    const [interestValue,setInterestValue] = useState<number | null>(null);
+    const handleInterestValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        setInterestValue(Number(event.target.value))
+    }
+
+    const [result, setResult] = useState<number | null>(null);
+
     return(
         <div className="container">
             <h1>JuroComposto.net</h1>
             <div className="calculator">
-                <div className="input">
-                    {initialValue? 
-                        <label className="valued" htmlFor="initial_value">Aporte Inicial</label>
-                        :<label htmlFor="initial_value">Aporte Inicial</label>
-                    } 
-                    
-                    <input type="number" id="initial_value"  value={initialValue? initialValue : ''}   onChange={(event)=>{setInitialValue(Number(event.target.value))}} className="initial_value"/>
+                <Input inputValue={initialValue} width={'100%'} label={'Aporte Inicial'} onValueChange={handleInitialValueChange} />
+                <Input inputValue={monthAddValue} width={'100%'} label={'Aporte Mensal'} onValueChange={handleAddMonthValueChange} />
+                <div className="double">
+                    <Input 
+                        inputValue={monthValue} 
+                        width={'48%'} label={'Meses'} 
+                        onValueChange={handleMonthValueChange} 
+                    />
+                    <Input 
+                        inputValue={interestValue} 
+                        width={'48%'} label={'Juros %'} 
+                        onValueChange={handleInterestValueChange} 
+                    />
                 </div>
-
-
+                <div className="result">
+                    <span>{result}</span>
+                </div>
             </div>
         </div>
     );
