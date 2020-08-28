@@ -29,9 +29,11 @@ const Input = ({label,inputValue,onValueChange, ...att } :InputProps) => {
         } 
                     
         <input 
-            type={att.type} 
+            type={att.type}
+            min={att.min}
+            step={att.step}
             id="inputValue" 
-            value={inputValue? inputValue : ''}   onChange={ onValueChange } className="initial_inputValue"/>
+            value={inputValue? inputValue : ''} onChange={ onValueChange } className="initial_inputValue"/>
     </div>
     )
    
