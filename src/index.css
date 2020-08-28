@@ -23,3 +23,11 @@ body {
   margin: 0 auto;
 }
 
+@media (min-width: 900px){
+  :root{
+    font-size: 70%;
+  }
+  .container {
+    max-width: 900px;
+  }
+}

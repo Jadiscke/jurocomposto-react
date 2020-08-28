@@ -17,7 +17,7 @@ label {
 input {
     height: 6rem;
     border-radius: 3rem;
-    background-color: #FFFFDD;
+    background-color: #EAFEFF;
     border: 2px solid #006A71;
     width: 100%;
     font-size: 2rem;
@@ -27,12 +27,12 @@ input {
 
 .input:focus-within label,
 label.valued{
-    left: 20%;
+    left: 30%;
     top: 0;
     font-size: 1rem;
     
     padding: 0.5rem;
-    background-color: #FFFFDD;
+    background-color: #EAFEFF;
     border: 1px solid #006A71;
     border-radius: 3rem;
 
