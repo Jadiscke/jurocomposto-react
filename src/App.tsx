@@ -11,23 +11,38 @@ interface Values {
 }
 
 const App = () => {
+    const FORMAT_CONSTANT:number = 100;
+    const formatValue = (eventValue: string):string => {
+        const newEventValue = Math.ceil(Number(eventValue) * FORMAT_CONSTANT)/FORMAT_CONSTANT;
+        return String(newEventValue)
+    }
+    function numberWithCommas(number:number):string {
+        return number.toLocaleString()
+    }
+    const formatMonthValue = (eventValue: string):string => {
+        const  newEventValue = Math.ceil(Number(eventValue));
+        return String(newEventValue)
+    }
     const [initialValue,setInitialValue] = useState<number>(0);
     const handleInitialValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        event.target.value = formatValue(event.target.value);
         setInitialValue(Number(event.target.value));
-       
 
         
     }
     const [monthValue,setMonthValue] = useState<number>(0);
     const handleMonthValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
-        setMonthValue(Number(parseFloat(event.target.value).toFixed(2)));
+        event.target.value = formatMonthValue(event.target.value);
+        setMonthValue(Number(event.target.value));
     }
     const [monthAddValue,setAddMonthValue] = useState<number>(0);
     const handleAddMonthValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
-        setAddMonthValue(Number(parseFloat(event.target.value).toFixed(2)));
+        event.target.value = formatValue(event.target.value);
+        setAddMonthValue(Number(event.target.value));
     }
     const [interestValue,setInterestValue] = useState<number>(0);
     const handleInterestValueChange= (event:ChangeEvent<HTMLInputElement> )=> {
+        event.target.value = formatValue(event.target.value);
         setInterestValue(Number(event.target.value));
     }
     const [values, setValues] = useState<Values>({initialValue: 0, monthly: 0, months: 0, interestRate: 0, interestType: 'yearly'});
@@ -72,23 +87,40 @@ const App = () => {
                     width={'100%'} 
                     label={'Aporte Inicial'} 
                     onValueChange={handleInitialValueChange} 
+                    className={'money'}
                 />
-                <Input inputValue={monthAddValue} width={'100%'} label={'Aporte Mensal'} onValueChange={handleAddMonthValueChange} />
+                <Input
+                    type={"number"}
+                    min={0}
+                    step={0.01} 
+                    inputValue={monthAddValue} 
+                    width={'100%'} 
+                    label={'Aporte Mensal'} 
+                    onValueChange={handleAddMonthValueChange} 
+                    className={'money'}
+                />
                 <div className="double">
-                    <Input 
+                    <Input
                         type="number"
+                        step={1}
+                        min={1} 
                         inputValue={monthValue} 
                         width={'48%'} label={'Meses'} 
                         onValueChange={handleMonthValueChange} 
+                        
                     />
-                    <Input 
+                    <Input
+                        type={"number"}
+                        min={0}
+                        step={0.01}  
                         inputValue={interestValue} 
-                        width={'48%'} label={'Juros %'} 
+                        width={'48%'} label={'Juros'} 
                         onValueChange={handleInterestValueChange} 
+                        className="interest"
                     />
                 </div>
-                <div className="result">
-                    <span>{result}</span>
+                <div className="result money">
+                    <span>{numberWithCommas(result)}</span>
                 </div>
             </div>
         </div>

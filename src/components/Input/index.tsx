@@ -11,7 +11,7 @@ const Input = ({label,inputValue,onValueChange, ...att } :InputProps) => {
 
     return(
         <div 
-            className="input"
+            className={`input ${att.className}`}
             style={{
             width: att.width
             }
@@ -33,7 +33,8 @@ const Input = ({label,inputValue,onValueChange, ...att } :InputProps) => {
             min={att.min}
             step={att.step}
             id="inputValue" 
-            value={inputValue? inputValue : ''} onChange={ onValueChange } className="initial_inputValue"/>
+            value={inputValue? inputValue : ''} onChange={ onValueChange }
+        />
     </div>
     )
    

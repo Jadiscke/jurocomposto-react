@@ -23,6 +23,30 @@ input {
     font-size: 2rem;
     padding: 0.5rem 5rem 0;
     box-shadow: 0 1rem 1rem -1rem;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    
+}
+.input.money::after {
+    content: "R$";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    left: 7%;
+}
+
+.input.interest::after {
+    content: "%";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    right: 18%;
 }
 
 .input:focus-within label,

@@ -16,7 +16,6 @@ h1 {
     display: flex;
     width: 100%;
     height: auto;
-    padding: 0.5rem;
     align-items: center;
     justify-content: space-between;
     pointer-events: all;
@@ -29,6 +28,7 @@ h1 {
     background: #EAFEFF;
     border-radius: 3rem;
     box-shadow: 0 1rem 1rem -1rem;
+    letter-spacing: 0.15rem;
     
 }
 
@@ -38,6 +38,17 @@ h1 {
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 2rem;
+}
+
+.result.money::after {
+    content: "R$";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    left: 7%;
 }
 
 
