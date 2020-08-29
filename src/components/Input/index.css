@@ -1,0 +1,64 @@
+.input {
+    position: relative;
+    margin-bottom: 2.8rem;
+    
+}
+label {
+    font-size: 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: #065446;
+    transition: ease-in-out 1s;
+    pointer-events: none;
+    
+}
+input {
+    height: 6rem;
+    border-radius: 3rem;
+    background-color: #EAFEFF;
+    border: 2px solid #006A71;
+    width: 100%;
+    font-size: 2rem;
+    padding: 0.5rem 5rem 0;
+    box-shadow: 0 1rem 1rem -1rem;
+    text-align: center;
+    letter-spacing: 0.15rem;
+    
+}
+.input.money::after {
+    content: "R$";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    left: 7%;
+}
+
+.input.interest::after {
+    content: "%";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    right: 18%;
+}
+
+.input:focus-within label,
+label.valued{
+    left: 30%;
+    top: 0;
+    font-size: 1rem;
+    
+    padding: 0.5rem;
+    background-color: #EAFEFF;
+    border: 1px solid #006A71;
+    border-radius: 3rem;
+
+    transition: ease-in-out 1s;
+}
