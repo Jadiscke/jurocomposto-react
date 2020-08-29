@@ -1,0 +1,57 @@
+h1 {
+    font-family: Montserrat;
+    font-size: 4rem;
+    letter-spacing: -0.4rem;
+    font-weight: normal;
+    color: --primary-color;
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.container {
+    margin-top: 10rem;
+}
+
+.double {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: all;
+}
+
+.result {
+    position: relative;
+    height: 6rem;
+    border: 2px solid #006A71;
+    background: #EAFEFF;
+    border-radius: 3rem;
+    box-shadow: 0 1rem 1rem -1rem;
+    letter-spacing: 0.15rem;
+    
+}
+
+.result span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
+}
+
+.result.money::after {
+    content: "R$";
+    font-size: 2rem;
+    color: #065446;
+    position: absolute;
+    height: 100%;
+    width: 2rem;
+    top: 30%;
+    left: 7%;
+}
+
+
+@media (min-width: 900px){
+
+}

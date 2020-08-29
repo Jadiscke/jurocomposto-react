@@ -1,4 +1,33 @@
+:root {
+  font-size: 60%;
+  --primary-color: #184D47;
+}
+
+*{
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Roboto;
+}
+
+.container {
+  max-width: 700px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px){
+  :root{
+    font-size: 70%;
+  }
+  .container {
+    max-width: 900px;
+  }
 }
